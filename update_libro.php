@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $disponible = $data['disponible'];
 
     $stmt = mysqli_prepare($conexion, 'UPDATE libros SET titulo=?, autor=?, disponible=? WHERE codigo=?');
-    mysqli_stmt_bind_param($stmt, 'ssii', $titulo, $autor, $disponible, $codigo);
+    mysqli_stmt_bind_param($stmt, 'ssii', $titulo, $autor, $disponible, $id);
     $updated = mysqli_stmt_execute($stmt);
     if (!$updated) {
       $error = mysqli_stmt_error($stmt);
