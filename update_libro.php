@@ -79,8 +79,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
       ?>
 
       <div class="actualizado">
-        <p>Libro actualizado</p>
-        <a href="./">Regresar a inicio</a>
+        <p>
+          Libro actualizado<br>
+          <a href="./">Regresar a inicio</a>
+        </p>
       </div>
       
       <?php
