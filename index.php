@@ -34,7 +34,7 @@
         echo '<td>' . $libroDisponible['disponible'] . '</td>';
         echo '<td>';
        
-        echo '<a href="update_libro.php" name="libro_id" value=" ' . $libroDisponible['codigo'] . '">';
+        echo '<a href="update_libro.php?codigo=', $libroDisponible['codigo'],'" name="libro_id" >';
         echo '<button type="submit">Actualizar</button>';
         echo '</a>' ;
 
