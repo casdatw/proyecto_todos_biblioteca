@@ -110,6 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         </select>
 
         <button type="submit">Actualizar</button>
+        <button type="button"><a href="./">Regresar a Inicio</a></button>
       </form>
     <?php
     }
