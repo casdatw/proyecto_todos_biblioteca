@@ -1,14 +1,11 @@
 <?php
-$host = 'localhost';   // O el host de tu servidor
-$dbname = 'biblioteca';
-$username = 'root';    // Usuario de la base de datos
-$password = '';        // Contraseña de la base de datos
+    $server = "localhost" ;
+    $user = "root" ;
+    $pass = "" ;
+    $database = "biblioteca" ;
 
-try {
-    // Conexión con PDO
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo 'Error de conexión: ' . $e->getMessage();
-}
+    $conexion = mysqli_connect($server , $user , $pass) or
+    die ("Error de conexión con el servidor") ;
+
+    mysqli_select_db($conexion , $database) ;
 ?>
