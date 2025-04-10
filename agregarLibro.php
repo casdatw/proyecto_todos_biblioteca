@@ -6,12 +6,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $autor = htmlspecialchars(trim($_POST['autor']));
     $disponible = $_POST['disponible'];
 
-    if (empty($titulo) || empty($autor) || empty($disponible)) {
+    if (empty($titulo) || empty($autor) || ($disponible !== '0' && empty($disponible))) {
         echo "<script>alert('Todos los campos son obligatorios.')</script>";
     } else {
         $sql = "INSERT INTO libros (titulo, autor, disponible) VALUES ('$titulo', '$autor', '$disponible')";
         if (mysqli_query($conexion, $sql)) {
-            echo "<script>alert('El libro $libro se ha insertado con éxito.')";
+            echo "<script>alert('El libro $titulo se ha insertado con éxito.')</script>";  
         } else {
             echo "<script>alert('Error al conectarse con la base de datos.')" . mysqli_error($conexion) . "</script>";
         }
@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 }
 mysqli_close($conexion);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,4 +49,3 @@ mysqli_close($conexion);
     </section>
 </body>
 </html>
-
