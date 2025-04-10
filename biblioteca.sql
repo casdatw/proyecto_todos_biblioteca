@@ -15,5 +15,12 @@ CREATE TABLE libros (
     codigo INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     autor VARCHAR(255),
-    disponible BOOLEAN DEFAULT TRUE
+    disponible ENUM('Sí', 'No') DEFAULT 'Sí'
 );
+
+-- Insertar algunos libros de ejemplo
+INSERT INTO libros (titulo, autor, disponible) VALUES ('Cien años de soledad', 'Gabriel García Márquez', 'Sí');
+INSERT INTO libros (titulo, autor, disponible) VALUES ('Don Quijote de la Mancha', 'Miguel de Cervantes', 'No');
+INSERT INTO libros (titulo, autor, disponible) VALUES ('El amor en los tiempos del cólera', 'Gabriel García Márquez', 'Sí');
+INSERT INTO libros (titulo, autor, disponible) VALUES ('La sombra del viento', 'Carlos Ruiz Zafón', 'Sí');
+INSERT INTO libros (titulo, autor, disponible) VALUES ('1984', 'George Orwell', 'No');
