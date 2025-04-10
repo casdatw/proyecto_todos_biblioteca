@@ -11,8 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     } else {
         $sql = "INSERT INTO libros (titulo, autor, disponible) VALUES ('$titulo', '$autor', '$disponible')";
         if (mysqli_query($conexion, $sql)) {
-            echo "<script>alert('El libro $libro se ha insertado con éxito.');
-                    window.location.href = 'index.php'; </script>";
+            echo "<script>alert('El libro $libro se ha insertado con éxito.')";
         } else {
             echo "<script>alert('Error al conectarse con la base de datos.')" . mysqli_error($conexion) . "</script>";
         }
